@@ -8,3 +8,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
